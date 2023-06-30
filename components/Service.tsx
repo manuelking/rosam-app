@@ -33,8 +33,8 @@ function Service({ content }: ServiceProps) {
           What you can expect
         </h1>
         <ul className="grid grid-cols-2">
-          {overview.map((point) => (
-            <li key={id}>&#10004; {point}</li>
+          {overview.map((point, index) => (
+            <li key={`${id}-${index}`}>&#10004; {point}</li>
           ))}
         </ul>
       </div>

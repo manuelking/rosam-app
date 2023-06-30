@@ -9,7 +9,7 @@ interface Content {
 }
 
 const content: Content = {
-  id: 'home-help',
+  id: 'home-help2',
   title: 'Home Help Service',
   subText: 'This is the home help service page',
   overview: [

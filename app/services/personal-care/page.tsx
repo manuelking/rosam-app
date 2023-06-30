@@ -9,7 +9,7 @@ interface Content {
 }
 
 const content: Content = {
-  id: 'personal-care',
+  id: 'personal-care1',
   title: 'Personal Care',
   subText: 'This is the title page',
   overview: ['text1'],
