@@ -1,6 +1,7 @@
 import React from 'react'
 
 interface Content {
+  id: string
   title: string
   subText: string
   overview: string[]
@@ -11,7 +12,7 @@ interface ServiceProps {
 }
 
 function Service({ content }: ServiceProps) {
-  const { title, subText, overview } = content
+  const { id, title, subText, overview } = content
   return (
     <div className="flex flex-col justify-center">
       <div className="flex flex-row justify-between pb-24">
@@ -33,7 +34,7 @@ function Service({ content }: ServiceProps) {
         </h1>
         <ul className="grid grid-cols-2">
           {overview.map((point) => (
-            <li>&#10004; {point}</li>
+            <li key={id}>&#10004; {point}</li>
           ))}
         </ul>
       </div>

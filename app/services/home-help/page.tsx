@@ -2,12 +2,14 @@ import Service from '@/components/Service'
 import React from 'react'
 
 interface Content {
+  id: string
   title: string
   subText: string
   overview: string[]
 }
 
 const content: Content = {
+  id: 'home-help',
   title: 'Home Help Service',
   subText: 'This is the home help service page',
   overview: [
