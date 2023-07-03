@@ -84,7 +84,7 @@ function Footer() {
                 {link.links.map((links) => {
                   const { id, title, link } = links
                   return (
-                    <div className="flex flex-col">
+                    <div key={id} className="flex flex-col">
                       <Link key={id} href={link} className="text-white">
                         {title}
                       </Link>
