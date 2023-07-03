@@ -1,3 +1,5 @@
+'use client'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const navLinks = [
@@ -49,7 +51,12 @@ const navLinks = [
 
 function Navbar() {
   return (
-    <div className="fixed w-full h-24 bg-white shadow-lg flex justify-between items-center">
+    <motion.div
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ delay: 0.1 }}
+      className="sticky top-0 w-full py-[24px] bg-white shadow-lg flex justify-between items-center"
+    >
       <div className="flex absolute justify-start items-start ml-10">
         <p className="text-[54px] font-bold">Logo</p>
       </div>
@@ -80,7 +87,7 @@ function Navbar() {
       {/* <div className="fixed inset-x-0 mx-auto top-20 w-full max-w-[900px] bg-ampurple">
         <p className="text-white text-center">Hello</p>
       </div> */}
-    </div>
+    </motion.div>
   )
 }
 
