@@ -77,7 +77,7 @@ function Footer() {
           {footerLinks.map((link) => {
             const { id, title } = link
             return (
-              <div>
+              <div key={id}>
                 <p key={id} className="text-white font-semibold text-[20px]">
                   {title}
                 </p>
