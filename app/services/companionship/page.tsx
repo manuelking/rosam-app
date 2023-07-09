@@ -49,10 +49,10 @@ interface ServiceProps {
 
 function page() {
   return (
-    <div className="flex flex-col justify-center px-24 pb-24">
-      <div className="flex flex-row justify-between pb-24 gap-x-6">
+    <div className="flex flex-col justify-center md:px-24 xxs:px-14 px-6 pb-24">
+      <div className="flex lg:flex-row flex-col justify-between pb-24 gap-x-6 lg:gap-y-0 gap-y-8">
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-ampurple font-bold text-[74px]">
+          <h1 className="text-ampurple font-bold ll:text-[74px] sd:text-[54px] text-[34px]">
             {content.title}
           </h1>
           <p className="font-light text-gray-500">{content.subText}</p>
@@ -129,7 +129,7 @@ function page() {
           <h1 className="text-ampurple text-[32px] font-bold">
             What you can expect
           </h1>
-          <ul className="grid grid-cols-2">
+          <ul className="grid sm:grid-cols-2 grid-cols-1 gap-x-4">
             {content.overview.map((point) => (
               <li
                 key={point}

@@ -3,10 +3,10 @@ import React from 'react'
 
 function page() {
   return (
-    <div className="flex flex-col mx-auto px-24 pb-24 w-full gap-y-16">
-      <div className="flex flex-row justify-between px-6">
+    <div className="flex flex-col mx-auto md:px-24 xxs:px-14 px-6 pb-24 w-full gap-y-16">
+      <div className="flex sd:flex-row flex-col justify-between gap-x-6 sd:gap-y-0 gap-y-8">
         <div className="flex flex-1 flex-col justify-center">
-          <h1 className="text-[74px] font-bold text-ampurple">
+          <h1 className="xl:text-[74px] sd:text-[54px] text-[44px] font-bold text-ampurple">
             Quality and Care
           </h1>
           <p className="text-gray-500">
