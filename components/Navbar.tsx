@@ -1,6 +1,7 @@
 'use client'
-import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const navLinks = [
   {
@@ -47,24 +48,19 @@ const navLinks = [
   },
 ]
 
-// CHANGE PADDING FOR NAV LINKS SO IT DOESNT CLOSE DROP WHEN YOU MOVE MOUSE SIDEWAYS
-
 function Navbar() {
+  const [toggle, setToggle] = useState(false)
+  const [toggleS, setToggleS] = useState(false)
   return (
-    <motion.div
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ delay: 0.1 }}
-      className="sticky top-0 w-full py-[24px] bg-white shadow-lg flex justify-between items-center"
-    >
+    <div className="sticky top-0 w-full py-[24px] bg-white shadow-lg flex justify-between items-center">
       <div className="flex absolute justify-start items-start ml-10">
-        <p className="text-[54px] font-bold">Logo</p>
+        <p className="text-[54px] font-bold">Lo</p>
       </div>
-      <div className="flex justify-center items-center mx-auto">
+      <div className="sm:flex hidden justify-center items-center mx-auto">
         <ul className="flex-row flex text-ampurple font-medium">
           {navLinks.map((nav) =>
             nav.drop ? (
-              <li key={nav.id} className="group mx-4 py-[10px]">
+              <li key={nav.id} className="group mx-4 py-[12px]">
                 <Link href={nav.link}>{nav.title}</Link>
                 <div className="hidden group-hover:block absolute inset-x-0 mx-auto top-[70px] w-full max-w-[900px] bg-white rounded-b-2xl shadow-xl">
                   <ul className="text-ampurple p-8">
@@ -77,17 +73,60 @@ function Navbar() {
                 </div>
               </li>
             ) : (
-              <li key={nav.id} className="mx-4 py-[10px]">
+              <li key={nav.id} className="mx-4 py-[12px]">
                 <Link href={nav.link}>{nav.title}</Link>
               </li>
             )
           )}
         </ul>
       </div>
-      {/* <div className="fixed inset-x-0 mx-auto top-20 w-full max-w-[900px] bg-ampurple">
-        <p className="text-white text-center">Hello</p>
-      </div> */}
-    </motion.div>
+      <div className="sm:hidden flex justify-end items-center mx-auto mr-10 z-20">
+        <Image
+          src={toggle ? '/x-mark.svg' : '/menu-amp.svg'}
+          alt="Menu"
+          width={30}
+          height={30}
+          className="z-30"
+          onClick={() => setToggle((prev) => !prev)}
+        />
+        <div className="absolute inset-x-0 mx-4 top-[78px] max-w-[500px] rounded-b-2xl shadow-xl z-30 bg-ampurple p-8">
+          <ul className="flex flex-col text-white">
+            {navLinks.map((nav) =>
+              nav.drop ? (
+                <li key={nav.id}>
+                  <div
+                    className="flex flex-row gap-x-2 items-center"
+                    onClick={() => setToggleS((prev) => !prev)}
+                  >
+                    <p>{nav.title}</p>
+                    <Image
+                      src={toggleS ? '/chev-down.svg' : '/chev-up.svg'}
+                      alt="Chevron"
+                      width={20}
+                      height={20}
+                    />
+                  </div>
+                  <ul className={`${toggleS ? 'hidden' : 'flex'} flex-col`}>
+                    <li className="text-[14px]">
+                      <Link href="/services">All Services</Link>
+                    </li>
+                    {nav.drop.map((drop) => (
+                      <li key={drop.id} className="text-[14px]">
+                        <Link href={drop.link}>{drop.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li key={nav.id}>
+                  <Link href={nav.link}>{nav.title}</Link>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+      </div>
+    </div>
   )
 }
 
