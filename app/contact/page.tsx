@@ -65,8 +65,8 @@ function Page() {
       ) : (
         <div>
           <div className="flex justify-center items-center py-10">
-            <h1 className="xl:text-[74px] sd:text-[54px] text-[44px] text-cobalt font-bold">
-              Get in touch
+            <h1 className="xl:text-[74px] sd:text-[54px] text-[44px] text-cobalt font-semibold">
+              Contact Us | Brighter Team
             </h1>
           </div>
           <form

@@ -7,8 +7,8 @@ function page() {
     <div className="flex flex-col mx-auto md:px-24 xxs:px-14 px-6 pb-24 w-full gap-y-16">
       <div className="flex sd:flex-row flex-col justify-between gap-x-6 sd:gap-y-0 gap-y-8">
         <div className="flex flex-1 flex-col justify-center">
-          <h1 className="xl:text-[74px] sd:text-[54px] text-[44px] font-bold text-cobalt">
-            About Brighter Team
+          <h1 className="xl:text-[74px] sd:text-[54px] text-[44px] font-semibold text-cobalt">
+            About Us | Brighter Team
           </h1>
           <p className="text-gray-500 font-light">
             At Brighter Team, we are dedicated to illuminating lives and spaces
