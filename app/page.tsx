@@ -9,15 +9,14 @@ export default function Home() {
 
       <div className="flex ss:flex-row flex-col items-center justify-between w-full bg-sun lg:rounded-br-[400px]">
         <div className="flex-1 space-y-6 ss:py-0 py-10">
-          <h1 className="xl:text-[74px] sd:text-[54px] text-[44px] font-semibold text-cobalt px-16">
-            brighter team
+          <h1 className="text-[54px] font-semibold text-cobalt px-16">
+            Elevate your space with Brighter Team
           </h1>
           <p className="sd:text-[16px] text-[14px] text-cobalt max-w-[800px] font-light px-16">
             Brighter Team is the premier staffing agency that bridges the gap
-            between exceptional talent and dynamic organizations. With a passion
-            for connecting the right people with the right opportunities, we are
-            committed to driving success for both employers and job seekers
-            alike.
+            between exceptional talent and dynamic organisations. With a passion
+            for connecting the right people with the right opportunities, you
+            can count on our team to brighten your surroundings.
           </p>
           <div>
             <Link href="/contact" className="px-16">
@@ -29,9 +28,9 @@ export default function Home() {
         </div>
         <div className="flex-1 overflow-hidden lg:rounded-br-[400px] justify-center flex">
           <Image
-            src="/rsc-img2nb.png"
+            src="/group.png"
             alt="Nurse caregiver"
-            width={330}
+            width={800}
             height={100}
             className=""
           />
@@ -58,7 +57,7 @@ export default function Home() {
           </div>
           <div className="flex-1">
             <Image
-              src="/rsc-img1.jpg"
+              src="/staff1.png"
               alt="Caregiver"
               width={500}
               height={500}
@@ -69,7 +68,7 @@ export default function Home() {
         <div className="flex sd:flex-row-reverse flex-col items-center justify-between w-full max-w-[1200px] gap-x-16">
           <div className="flex-1">
             <h1 className="sd:text-[44px] text-[34px] font-semibold text-cobalt text-right">
-              personalized approach
+              personalised approach
             </h1>
             <p className="text-right max-w-[600px] font-light text-gray-500 sd:text-[16px] text-[14px] sd:pb-0 pb-8">
               We understand that every business and individual is unique, and a
@@ -84,7 +83,7 @@ export default function Home() {
           </div>
           <div className="flex-1">
             <Image
-              src="/rsc-img3.jpg"
+              src="/staff2.png"
               alt="Caregiver"
               width={500}
               height={500}
@@ -112,7 +111,7 @@ export default function Home() {
           </div>
           <div className="flex-1">
             <Image
-              src="/rsc-img1.jpg"
+              src="/staff3.png"
               alt="Caregiver"
               width={500}
               height={500}
@@ -137,7 +136,7 @@ export default function Home() {
         <div className="flex justify-center items-center">
           <Link href="/services">
             <button className="w-[250px] h-[50px] bg-sun rounded-full shadow-lg text-cobalt font-semibold text-[20px]">
-              Find Your Match
+              Get a quote
             </button>
           </Link>
         </div>
