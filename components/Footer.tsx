@@ -9,7 +9,7 @@ const footerLinks = [
       {
         id: 'fc1-l1',
         title: 'About',
-        link: '/why-us',
+        link: '/about',
       },
       {
         id: 'fc1-l2',
