@@ -169,8 +169,9 @@ function Page() {
             ) : (
               <div className="flex items-center justify-center mt-8">
                 <button
+                  disabled
                   type="submit"
-                  className="rounded-lg drop-shadow-md bg-sun font-bold text-cobalt p-2 w-[200px]"
+                  className="rounded-lg drop-shadow-md bg-neutral-200 font-bold text-red-700 p-2 w-[200px]"
                 >
                   Send
                 </button>
