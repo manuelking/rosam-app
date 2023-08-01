@@ -30,7 +30,7 @@ const navLinks = [
         link: '/services/home-help',
       },
       {
-        id: 'nvl4-drp2',
+        id: 'nvl4-drp3',
         title: 'Personal Care Services',
         link: '/services/personal-care',
       },
@@ -52,18 +52,32 @@ function Navbar() {
   const [toggle, setToggle] = useState(false)
   const [toggleS, setToggleS] = useState(false)
   return (
-    <main className="sticky top-0 w-screen py-[24px] px-10 bg-white shadow-lg flex justify-between items-center">
-      <div className="flex justify-start items-start">
-        <p>logo</p>
+    <main
+      onClick={() => {
+        toggle ? setToggle(false) : null
+      }}
+      className="sticky top-0 w-screen py-[24px] px-10 bg-white shadow-lg flex justify-between items-center"
+    >
+      <div className="flex justify-start items-start absolute">
+        <Link href="/">
+          <Image
+            src="/brighter.png"
+            alt="Brighter Logo"
+            width={180}
+            height={180}
+            className="cursor-pointer"
+          />
+        </Link>
       </div>
-      <div className="sm:flex hidden justify-center items-center flex-grow relative">
-        <ul className="flex flex-row text-ampurple">
+      <div className="lg:flex hidden justify-center items-center flex-grow relative">
+        <ul className="flex flex-row text-cobalt">
           {navLinks.map((nav) =>
             nav.drop ? (
               <li key={nav.id} className="group py-[12px] mx-4 ">
                 <p>{nav.title}</p>
                 <div className="absolute group-hover:block hidden inset-x-0 mx-auto top-[47px] bg-white max-w-[900px] rounded-b-2xl shadow-xl">
                   <ul className="p-8 space-y-4">
+                    <Link href="/services">All Services</Link>
                     {nav.drop.map((drop) => (
                       <li key={drop.id} className="">
                         <Link href={drop.link}>{drop.title}</Link>
@@ -80,7 +94,7 @@ function Navbar() {
           )}
         </ul>
       </div>
-      <div className="sm:hidden flex justify-end items-end flex-grow relative">
+      <div className="lg:hidden flex justify-end items-end flex-grow relative">
         <Image
           src={toggle ? '/x-mark.svg' : '/menu.svg'}
           alt="Menu"
@@ -90,7 +104,7 @@ function Navbar() {
         />
         {toggle ? (
           <div className="absolute inset-x-0 mx-auto top-[58px] bg-white max-w-[500px] rounded-b-2xl shadow-xl">
-            <ul className="flex flex-col p-8 text-ampurple space-y-6">
+            <ul className="flex flex-col p-8 text-cobalt space-y-6">
               {navLinks.map((nav) =>
                 nav.drop ? (
                   <li

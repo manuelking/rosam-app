@@ -52,7 +52,7 @@ function page() {
     <div className="flex flex-col justify-center md:px-24 xxs:px-14 px-6 pb-24">
       <div className="flex lg:flex-row flex-col justify-between pb-24 gap-x-6 lg:gap-y-0 gap-y-8">
         <div className="flex-1 flex flex-col justify-center">
-          <h1 className="text-ampurple font-bold ll:text-[74px] sd:text-[54px] text-[34px]">
+          <h1 className="text-cobalt font-bold ll:text-[74px] sd:text-[54px] text-[34px]">
             {content.title}
           </h1>
           <p className="font-light text-gray-500">{content.subText}</p>
@@ -69,7 +69,7 @@ function page() {
       </div>
       <div className="flex flex-col gap-y-10">
         <div>
-          <h1 className="text-ampurple text-[32px] font-bold text-left">
+          <h1 className="text-cobalt text-[32px] font-bold text-left">
             What is {content.title}?
           </h1>
           <p className="text-left text-gray-500 font-light">
@@ -88,7 +88,7 @@ function page() {
           </p>
         </div>
         <div>
-          <h1 className="text-ampurple text-[32px] font-bold text-left">
+          <h1 className="text-cobalt text-[32px] font-bold text-left">
             Companionship from Brighter Team
           </h1>
           <p className="text-left font-light text-gray-500">
@@ -126,7 +126,7 @@ function page() {
           </p>
         </div>
         <div>
-          <h1 className="text-ampurple text-[32px] font-bold">
+          <h1 className="text-cobalt text-[32px] font-bold">
             What you can expect
           </h1>
           <ul className="grid sm:grid-cols-2 grid-cols-1 gap-x-4">

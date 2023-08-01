@@ -6,7 +6,7 @@ function page() {
   return (
     <div className="flex flex-col mx-auto pb-24 md:px-24 xxs:px-14 px-6 w-full">
       <div className="flex justify-center items-center py-10">
-        <h1 className="xl:text-[74px] sd:text-[54px] text-[44px] text-ampurple font-bold">
+        <h1 className="xl:text-[74px] sd:text-[54px] text-[44px] text-cobalt font-bold">
           Services
         </h1>
       </div>
@@ -14,7 +14,7 @@ function page() {
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
         {/* card 1 */}
         <div className="flex justify-center">
-          <div className="flex flex-col bg-ampurple max-w-[700px] overflow-hidden rounded-xl shadow-xl">
+          <div className="flex flex-col bg-sun max-w-[700px] overflow-hidden rounded-xl shadow-xl">
             <Image
               src="/rsc-img3.jpg"
               alt="Nurse"
@@ -22,7 +22,7 @@ function page() {
               height={500}
               className="w-full"
             />
-            <div className="flex flex-col justify-center items-center text-white xxs:p-10 p-6 space-y-6">
+            <div className="flex flex-col justify-center items-center text-cobalt xxs:p-10 p-6 space-y-6">
               <h1 className="font-bold xx:text-[34px] text-[28px]">
                 Personal Care
               </h1>
@@ -33,7 +33,7 @@ function page() {
                 assistance, making these activities more manageable for you.
               </p>
               <Link href="/services/personal-care">
-                <button className="bg-white rounded-2xl py-2 px-6 text-ampurple font-semibold">
+                <button className="bg-white rounded-2xl py-2 px-6 text-cobalt font-semibold">
                   Find out more...
                 </button>
               </Link>
@@ -42,7 +42,7 @@ function page() {
         </div>
         {/* card 2 */}
         <div className="flex justify-center">
-          <div className="flex flex-col bg-ampurple max-w-[700px] overflow-hidden rounded-xl shadow-xl">
+          <div className="flex flex-col bg-sun max-w-[700px] overflow-hidden rounded-xl shadow-xl">
             <Image
               src="/rsc-img3.jpg"
               alt="Nurse"
@@ -50,7 +50,7 @@ function page() {
               height={500}
               className="w-full"
             />
-            <div className="flex flex-col justify-center items-center text-white xxs:p-10 p-6 space-y-6">
+            <div className="flex flex-col justify-center items-center text-cobalt xxs:p-10 p-6 space-y-6">
               <h1 className="font-bold xx:text-[34px] text-[28px]">
                 Home Help
               </h1>
@@ -62,7 +62,7 @@ function page() {
                 big difference in maintaining a welcoming home environment.
               </p>
               <Link href="/services/home-help">
-                <button className="bg-white rounded-2xl py-2 px-6 text-ampurple font-semibold">
+                <button className="bg-white rounded-2xl py-2 px-6 text-cobalt font-semibold">
                   Find out more...
                 </button>
               </Link>
@@ -71,7 +71,7 @@ function page() {
         </div>
         {/* card 3 */}
         <div className="flex justify-center">
-          <div className="flex flex-col bg-ampurple max-w-[700px] overflow-hidden rounded-xl shadow-xl">
+          <div className="flex flex-col bg-sun max-w-[700px] overflow-hidden rounded-xl shadow-xl">
             <Image
               src="/rsc-img3.jpg"
               alt="Nurse"
@@ -79,7 +79,7 @@ function page() {
               height={500}
               className="w-full"
             />
-            <div className="flex flex-col justify-center items-center text-white xxs:p-10 p-6 space-y-6">
+            <div className="flex flex-col justify-center items-center text-cobalt xxs:p-10 p-6 space-y-6">
               <h1 className="font-bold xx:text-[34px] text-[28px]">
                 Companionship
               </h1>
@@ -91,7 +91,7 @@ function page() {
                 promoting mental awareness and personal fulfillment.
               </p>
               <Link href="/services/companionship">
-                <button className="bg-white rounded-2xl py-2 px-6 text-ampurple font-semibold">
+                <button className="bg-white rounded-2xl py-2 px-6 text-cobalt font-semibold">
                   Find out more...
                 </button>
               </Link>

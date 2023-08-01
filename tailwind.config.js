@@ -14,6 +14,8 @@ module.exports = {
       },
       colors: {
         ampurple: '#A83351',
+        sun: '#ffc220',
+        cobalt: '#0071ce',
       },
     },
     screens: {
