@@ -4,12 +4,12 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex flex-col mx-auto lg:px-24 px-0 pb-24 w-full">
+    <main className="flex flex-col mx-auto ll:px-24 px-0 pb-24 w-full">
       {/* hero section */}
 
-      <div className="flex ss:flex-row flex-col items-center justify-between w-full bg-sun lg:rounded-br-[400px]">
-        <div className="flex-1 space-y-6 ss:py-0 py-10">
-          <h1 className="text-[54px] font-semibold text-cobalt px-16">
+      <div className="flex md:flex-row flex-col items-center justify-between w-full bg-sun ll:rounded-br-[400px]">
+        <div className="flex-1 space-y-6 md:py-0 py-10">
+          <h1 className="xl:text-[54px] text-[34px] font-semibold text-cobalt px-16">
             Elevate your space with Brighter Team
           </h1>
           <p className="sd:text-[16px] text-[14px] text-cobalt max-w-[800px] font-light px-16">
@@ -26,7 +26,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="flex-1 overflow-hidden lg:rounded-br-[400px] justify-center flex">
+        <div className="flex-1 overflow-hidden ll:rounded-br-[400px] justify-center flex">
           <Image
             src="/group.png"
             alt="Nurse caregiver"
@@ -57,11 +57,11 @@ export default function Home() {
           </div>
           <div className="flex-1">
             <Image
-              src="/staff1.png"
+              src="/cleanstaff3.jpg"
               alt="Caregiver"
               width={500}
               height={500}
-              className="xxs:rounded-md rounded-lg"
+              className=""
             />
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function Home() {
           </div>
           <div className="flex-1">
             <Image
-              src="/staff2.png"
+              src="/staff1.png"
               alt="Caregiver"
               width={500}
               height={500}
@@ -134,7 +134,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="flex justify-center items-center">
-          <Link href="/services">
+          <Link href="/contact">
             <button className="w-[250px] h-[50px] bg-sun rounded-full shadow-lg text-cobalt font-semibold text-[20px]">
               Get a quote
             </button>
