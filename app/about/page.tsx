@@ -20,7 +20,7 @@ function page() {
         </div>
         <div className="flex-1">
           <Image
-            src="/rsc-img1.jpg"
+            src="/staff4j.jpg"
             alt="Nurse care"
             width={1000}
             height={500}
