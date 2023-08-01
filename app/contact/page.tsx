@@ -11,7 +11,7 @@ type Inputs = {
   postcode: string
 }
 
-function page() {
+function Page() {
   const [isSent, setIsSent] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -167,4 +167,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
