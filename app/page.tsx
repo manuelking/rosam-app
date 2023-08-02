@@ -19,7 +19,7 @@ export default function Home() {
             can count on our team to brighten your surroundings.
           </p>
           <div>
-            <Link href="/contact" className="px-16">
+            <Link href="mailto:team@brighterteam.co.uk" className="px-16">
               <button className="w-[200px] h-[50px] bg-white rounded-e-2xl shadow-lg text-cobalt font-semibold">
                 Get Started Now
               </button>
@@ -134,7 +134,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="flex justify-center items-center">
-          <Link href="/contact">
+          <Link href="mailto:team@brighterteam.co.uk">
             <button className="w-[250px] h-[50px] bg-sun rounded-full shadow-lg text-cobalt font-semibold text-[20px]">
               Get a quote
             </button>
