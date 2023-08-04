@@ -84,7 +84,7 @@ function page() {
           </h1>
         </div>
         <div className="flex justify-center items-center">
-          <Link href="/contact">
+          <Link href="mailto:team@brighterteam.co.uk">
             <button className="w-[250px] h-[50px] bg-sun rounded-full shadow-lg text-cobalt font-semibold text-[20px]">
               Get a quote
             </button>
