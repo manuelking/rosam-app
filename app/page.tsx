@@ -45,7 +45,7 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="grid sd:grid-cols-2 grid-cols-1 gap-8 gap-y-24 w-full">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-8 w-full">
           <Link href="/cleaning">
             <div className="flex flex-row justify-center items-center bg-sun  rounded-md gap-8 h-[170px] p-8">
               <div className="flex-1 flex flex-col">
