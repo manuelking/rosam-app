@@ -10,7 +10,7 @@ interface Content {
 
 const content: Content = {
   id: 'home-help2',
-  title: 'Home Help Service',
+  title: 'Home Help',
   overview: [
     'Collect prescriptions',
     'Provide light house keeping',

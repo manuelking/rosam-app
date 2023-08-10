@@ -4,10 +4,10 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex flex-col mx-auto ll:px-24 px-0 pb-24 w-full">
-      {/* hero section */}
+    <main className="flex flex-col mx-auto pb-24 w-full">
+      {/* hero section - ll:rounded-br-[400px] - ll:rounded-br-[400px] */}
 
-      <div className="flex md:flex-row flex-col items-center justify-between w-full bg-sun ll:rounded-br-[400px]">
+      <div className="flex md:flex-row flex-col items-center justify-between w-full bg-sun">
         <div className="flex-1 space-y-6 md:py-0 py-10">
           <h1 className="xl:text-[54px] text-[34px] font-semibold text-cobalt px-16">
             Elevate your space with Brighter Team
@@ -19,14 +19,14 @@ export default function Home() {
             can count on our team to brighten your surroundings.
           </p>
           <div>
-            <Link href="mailto:team@brighterteam.co.uk" className="px-16">
+            <Link href="/staff" className="px-16">
               <button className="w-[200px] h-[50px] bg-white rounded-e-2xl shadow-lg text-cobalt font-semibold">
-                Get Started Now
+                Find Out More
               </button>
             </Link>
           </div>
         </div>
-        <div className="flex-1 overflow-hidden ll:rounded-br-[400px] justify-center flex">
+        <div className="flex-1 overflow-hidden justify-center flex">
           <Image
             src="/group.png"
             alt="Nurse caregiver"
@@ -37,9 +37,57 @@ export default function Home() {
         </div>
       </div>
 
+      {/* services part */}
+      <div className="flex flex-col justify-center items-center md:px-24 xxs:px-14 px-6 pt-24">
+        <div className="pb-12">
+          <h1 className="sd:text-[34px] text-[24px] font-semibold text-cobalt">
+            Services we provide staff for
+          </h1>
+        </div>
+
+        <div className="grid sd:grid-cols-2 grid-cols-1 gap-8 gap-y-24 w-full">
+          <Link href="/cleaning">
+            <div className="flex flex-row justify-center items-center bg-sun  rounded-md gap-8 h-[170px] p-8">
+              <div className="flex-1 flex flex-col">
+                <h1 className="text-neutral-600 font-semibold text-[24px]">
+                  Cleaning
+                </h1>
+                <p className="text-neutral-600">
+                  Our professional team of cleaners is committed to delivering a
+                  pristine environment that shines brighter.
+                </p>
+              </div>
+              <Link href="/cleaning">
+                <button className="bg-cobalt text-white p-3 rounded-md shadow-lg font-medium">
+                  Find out more
+                </button>
+              </Link>
+            </div>
+          </Link>
+          <Link href="/care">
+            <div className="flex flex-row justify-center items-center bg-sun  rounded-md gap-8 h-[170px] p-8">
+              <div className="flex-1 flex flex-col">
+                <h1 className="text-neutral-600 font-semibold text-[24px]">
+                  Care
+                </h1>
+                <p className="text-neutral-600">
+                  Our companssionate team of caregivers is devoted to delivering
+                  care that brightens lives.
+                </p>
+              </div>
+              <Link href="/cleaning">
+                <button className="bg-cobalt text-white p-3 rounded-md shadow-lg font-medium">
+                  Find out more
+                </button>
+              </Link>
+            </div>
+          </Link>
+        </div>
+      </div>
+
       {/* body section with row and row reverse */}
 
-      <div className="flex flex-col justify-center items-center md:px-24 xxs:px-14 px-6 py-24 gap-y-24">
+      <div className="flex flex-col justify-center items-center md:px-24 xxs:px-14 px-6 pt-24 gap-y-24">
         <div className="flex sd:flex-row flex-col items-center justify-between w-full max-w-[1200px] gap-x-16">
           <div className="flex-1">
             <h1 className="sd:text-[44px] text-[34px] font-semibold text-cobalt text-left">
@@ -123,14 +171,14 @@ export default function Home() {
 
       {/* Call to action bit */}
 
-      <div className="flex md:flex-row flex-col justify-center w-full py-10 md:px-24 xxs:px-14 px-6 gap-x-24 md:gap-y-0 gap-y-8">
+      <div className="flex md:flex-row flex-col justify-center w-full md:px-24 xxs:px-14 px-6 gap-x-24 md:gap-y-0 gap-y-8 pt-24">
         <div className="flex flex-col justify-center">
           <p className="text-cobalt font-light md:text-[16px] text-[14px] md:text-left text-center">
             Experince the Difference with Brighter Team - Your Staffing
             Solution!
           </p>
-          <h1 className="text-cobalt font-semibold sd:text-[44px] text-[44px] md:text-left text-center">
-            partner with brighter team today
+          <h1 className="text-cobalt font-semibold sd:text-[34px] text-[24px] md:text-left text-center">
+            Partner with brighter team today
           </h1>
         </div>
         <div className="flex justify-center items-center">
