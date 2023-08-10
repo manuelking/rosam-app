@@ -75,7 +75,7 @@ export default function Home() {
                   care that brightens lives.
                 </p>
               </div>
-              <Link href="/cleaning">
+              <Link href="/care">
                 <button className="bg-cobalt text-white p-3 rounded-md shadow-lg font-medium">
                   Find out more
                 </button>
