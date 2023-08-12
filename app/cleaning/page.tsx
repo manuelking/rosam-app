@@ -13,11 +13,11 @@ function page() {
             Cleaning
           </h1>
           <p className="font-light text-gray-500">
-            We offer Experience the Difference - Choose Brighter Team Cleaning
-            for all your cleaning needs. Our professional, dedicated team is
-            committed to delivering a pristine environment that shines with
-            brilliance. Say goodbye to dust, grime, and clutter, and welcome a
-            brighter space.
+            Choose Brighter Team Cleaning for all your cleaning needs. We offer
+            a wide range of cleaning services and our professional, dedicated
+            team is committed to delivering a pristine environment that shines
+            with brilliance. Say goodbye to dust, grime, and clutter, and
+            welcome a brighter space.
           </p>
         </div>
         <div className="flex-1">
