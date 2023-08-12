@@ -47,7 +47,7 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 grid-cols-1 gap-8 w-full">
           <Link href="/cleaning">
-            <div className="flex flex-row justify-center items-center bg-sun  rounded-md gap-8 h-[170px] p-8">
+            <div className="flex xs:flex-row flex-col justify-center items-center bg-sun  rounded-md gap-8 xs:h-[170px] xxs:h-[250px] h-[280px] p-8">
               <div className="flex-1 flex flex-col">
                 <h1 className="text-neutral-600 font-semibold text-[24px]">
                   Cleaning
@@ -65,7 +65,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/care">
-            <div className="flex flex-row justify-center items-center bg-sun  rounded-md gap-8 h-[170px] p-8">
+            <div className="flex xs:flex-row flex-col justify-center items-center bg-sun  rounded-md gap-8 xs:h-[170px] xxs:h-[250px] h-[280px] p-8">
               <div className="flex-1 flex flex-col">
                 <h1 className="text-neutral-600 font-semibold text-[24px]">
                   Care
