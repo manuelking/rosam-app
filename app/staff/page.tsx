@@ -12,21 +12,19 @@ function page() {
       </div>
 
       {/* staff cards */}
-      <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-10">
         {/* card 1 */}
         <div className="flex justify-center">
-          <div className="flex flex-col bg-white max-w-[500px] overflow-hidden">
-            <div className="flex-1">
-              <Image
-                src="/cleanstaff4.jpg"
-                alt="Caregiver"
-                width={300}
-                height={300}
-                priority
-                className="w-full"
-              />
-            </div>
-            <div className="flex flex-1 flex-col justify-center items-center text-cobalt xxs:p-4 p-2 space-y-6">
+          <div className="flex flex-col bg-white max-w-[600px] overflow-hidden">
+            <Image
+              src="/cleanstaff4.jpg"
+              alt="Caregiver"
+              width={300}
+              height={300}
+              priority
+              className="w-full"
+            />
+            <div className="flex flex-col justify-center items-center text-cobalt xxs:p-10 p-6 space-y-6">
               <h1 className="font-bold xx:text-[34px] text-[28px]">Cleaning</h1>
               <p>
                 We understand that certain tasks, such as bathing, dressing, and
@@ -44,17 +42,15 @@ function page() {
         </div>
         {/* card 2 */}
         <div className="flex justify-center">
-          <div className="flex flex-col bg-white max-w-[500px] overflow-hidden ">
-            <div className="flex-1">
-              <Image
-                src="/rsc-img1.jpg"
-                alt="Nurse"
-                width={500}
-                height={500}
-                className="w-full"
-              />
-            </div>
-            <div className="flex flex-1 flex-col justify-center items-center text-cobalt xxs:p-10 p-6 space-y-6">
+          <div className="flex flex-col bg-white max-w-[600px] overflow-hidden ">
+            <Image
+              src="/rsc-img1.jpg"
+              alt="Nurse"
+              width={500}
+              height={500}
+              className="w-full"
+            />
+            <div className="flex flex-col justify-center items-center text-cobalt xxs:p-10 p-6 space-y-6">
               <h1 className="font-bold xx:text-[34px] text-[28px]">Care</h1>
               <p>
                 Our caregivers are trained to provide light housekeeping,
