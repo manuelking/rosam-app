@@ -16,7 +16,11 @@ function Nav() {
         </Link>
       </div>
       <div className="flex-1 flex justify-end">
-        <Link href="mailto:team@brighterteam.co.uk">
+        <Link
+          href="https://contact.brighterteam.co.uk/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button className="bg-sun text-cobalt font-semibold xxs:text-[18px] text-[14px] py-2 xs:px-10 px-4 rounded-full">
             Get a quote
           </button>

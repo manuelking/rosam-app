@@ -7,8 +7,8 @@ function page() {
   return (
     <div className="flex flex-col justify-center md:px-24 xxs:px-14 px-6 pb-24">
       {/* banner */}
-      <div className="flex lg:flex-row flex-col justify-between pb-24 gap-x-6 lg:gap-y-0 gap-y-8">
-        <div className="flex-1 flex flex-col justify-center">
+      <div className="flex lg:flex-row flex-col justify-between pb-24 gap-x-6 lg:gap-y-0 gap-y-8 lg:pt-0 pt-6">
+        <div className="flex-1 flex flex-col justify-center gap-y-6">
           <h1 className="text-cobalt font-bold sd:text-[74px] xxs:text-[54px] text-[44px]">
             Cleaning
           </h1>
@@ -19,6 +19,15 @@ function page() {
             with brilliance. Say goodbye to dust, grime, and clutter, and
             welcome a brighter space.
           </p>
+          <Link
+            href="https://contact.brighterteam.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="w-[200px] h-[50px] bg-sun rounded-full shadow-lg text-cobalt font-semibold text-[20px]">
+              Get a quote
+            </button>
+          </Link>
         </div>
         <div className="flex-1">
           <Image
@@ -265,7 +274,11 @@ function page() {
           </h1>
         </div>
         <div className="flex justify-center items-center">
-          <Link href="mailto:team@brighterteam.co.uk">
+          <Link
+            href="https://contact.brighterteam.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="w-[250px] h-[50px] bg-sun rounded-full shadow-lg text-cobalt font-semibold text-[20px]">
               Get a quote
             </button>

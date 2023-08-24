@@ -182,7 +182,11 @@ export default function Home() {
           </h1>
         </div>
         <div className="flex justify-center items-center">
-          <Link href="mailto:team@brighterteam.co.uk">
+          <Link
+            href="https://contact.brighterteam.co.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="w-[250px] h-[50px] bg-sun rounded-full shadow-lg text-cobalt font-semibold text-[20px]">
               Get a quote
             </button>
