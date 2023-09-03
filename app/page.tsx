@@ -45,27 +45,47 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-8 w-full">
-          <Link href="/cleaning">
-            <div className="flex xs:flex-row flex-col justify-center items-center bg-sun  rounded-md gap-8 xs:h-[170px] xxs:h-[250px] h-[280px] p-8">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-6 w-full">
+          <Link href="/cleaning/residential">
+            <div className="flex xs:flex-row flex-col justify-center items-center bg-sun hover:bg-[#fab600]  rounded-md gap-8 xs:h-[150px] xxs:h-[250px] h-[280px] p-8 shadow-lg">
               <div className="flex-1 flex flex-col">
                 <h1 className="text-neutral-600 font-semibold text-[24px]">
-                  Cleaning
+                  Residential Cleaning
                 </h1>
                 <p className="text-neutral-600">
                   Our professional team of cleaners is committed to delivering a
                   pristine environment that shines brighter.
                 </p>
               </div>
-              <Link href="/cleaning">
-                <button className="bg-cobalt text-white p-3 rounded-md shadow-lg font-medium">
-                  Find out more
-                </button>
-              </Link>
+              <Image
+                src="/rightchev.svg"
+                alt="chevron right"
+                width={40}
+                height={40}
+              />
+            </div>
+          </Link>
+          <Link href="/cleaning/commercial">
+            <div className="flex xs:flex-row flex-col justify-center items-center bg-sun hover:bg-[#fab600]  rounded-md gap-8 xs:h-[150px] xxs:h-[250px] h-[280px] p-8 shadow-lg">
+              <div className="flex-1 flex flex-col">
+                <h1 className="text-neutral-600 font-semibold text-[24px]">
+                  Commercial Cleaning
+                </h1>
+                <p className="text-neutral-600">
+                  Our professional team of cleaners is committed to delivering a
+                  pristine environment that shines brighter.
+                </p>
+              </div>
+              <Image
+                src="/rightchev.svg"
+                alt="chevron right"
+                width={40}
+                height={40}
+              />
             </div>
           </Link>
           <Link href="/care">
-            <div className="flex xs:flex-row flex-col justify-center items-center bg-sun  rounded-md gap-8 xs:h-[170px] xxs:h-[250px] h-[280px] p-8">
+            <div className="flex xs:flex-row flex-col justify-center items-center bg-sun hover:bg-[#fab600]  rounded-md gap-8 xs:h-[150px] xxs:h-[250px] h-[280px] p-8 shadow-lg">
               <div className="flex-1 flex flex-col">
                 <h1 className="text-neutral-600 font-semibold text-[24px]">
                   Care
@@ -75,18 +95,18 @@ export default function Home() {
                   care that brightens lives.
                 </p>
               </div>
-              <Link href="/care">
-                <button className="bg-cobalt text-white p-3 rounded-md shadow-lg font-medium">
-                  Find out more
-                </button>
-              </Link>
+              <Image
+                src="/rightchev.svg"
+                alt="chevron right"
+                width={40}
+                height={40}
+              />
             </div>
           </Link>
         </div>
       </div>
 
       {/* body section with row and row reverse */}
-
       <div className="flex flex-col justify-center items-center md:px-24 xxs:px-14 px-6 pt-24 gap-y-24">
         <div className="flex sd:flex-row flex-col items-center justify-between w-full max-w-[1200px] gap-x-16">
           <div className="flex-1">
@@ -169,8 +189,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Call to action bit */}
-
+      {/* Call to action */}
       <div className="flex md:flex-row flex-col justify-center w-full md:px-24 xxs:px-14 px-6 gap-x-24 md:gap-y-0 gap-y-8 pt-24">
         <div className="flex flex-col justify-center">
           <p className="text-cobalt font-light md:text-[16px] text-[14px] md:text-left text-center">
