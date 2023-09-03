@@ -46,7 +46,7 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-2 grid-cols-1 gap-6 w-full">
-          <Link href="/cleaning/residential">
+          <Link href="/cleaning/leeds-residential-cleaning">
             <div className="flex xs:flex-row flex-col justify-center items-center bg-sun hover:bg-[#fab600]  rounded-md gap-8 xs:h-[150px] xxs:h-[250px] h-[280px] p-8 shadow-lg">
               <div className="flex-1 flex flex-col">
                 <h1 className="text-neutral-600 font-semibold text-[24px]">
@@ -65,7 +65,7 @@ export default function Home() {
               />
             </div>
           </Link>
-          <Link href="/cleaning/commercial">
+          <Link href="/cleaning/leeds-commercial-cleaning">
             <div className="flex xs:flex-row flex-col justify-center items-center bg-sun hover:bg-[#fab600]  rounded-md gap-8 xs:h-[150px] xxs:h-[250px] h-[280px] p-8 shadow-lg">
               <div className="flex-1 flex flex-col">
                 <h1 className="text-neutral-600 font-semibold text-[24px]">
