@@ -4,7 +4,7 @@ import React from 'react'
 
 function Nav() {
   return (
-    <div className="sticky top-0 w-screen py-[24px] ss:px-24 xxs:px-10 px-4 bg-white shadow-lg flex justify-between items-center">
+    <div className="sticky top-0 w-screen py-[24px] ss:px-24 xxs:px-10 px-4 bg-white shadow-lg flex justify-between items-center z-10">
       <div className="flex-1 flex justify-start">
         <Link href="/">
           <Image

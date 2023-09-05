@@ -18,12 +18,18 @@ export default function Home() {
             for connecting the right people with the right opportunities, you
             can count on our team to brighten your surroundings.
           </p>
-          <div>
-            <Link href="/staff" className="px-16">
-              <button className="w-[200px] h-[50px] bg-white rounded-e-2xl shadow-lg text-cobalt font-semibold">
-                Find Out More
-              </button>
-            </Link>
+          <div className="px-16">
+            <button
+              className="w-[200px] h-[50px] bg-white rounded-e-2xl shadow-lg text-cobalt font-semibold"
+              onClick={() => {
+                const servicesElement = document.getElementById('services')
+                if (servicesElement) {
+                  servicesElement.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+            >
+              Find Out More
+            </button>
           </div>
         </div>
         <div className="flex-1 overflow-hidden justify-center flex">
@@ -38,7 +44,10 @@ export default function Home() {
       </div>
 
       {/* services part */}
-      <div className="flex flex-col justify-center items-center md:px-24 xxs:px-14 px-6 pt-24">
+      <div
+        id="services"
+        className="flex flex-col justify-center items-center md:px-24 xxs:px-14 px-6 pt-24"
+      >
         <div className="pb-12">
           <h1 className="sd:text-[34px] text-[24px] font-semibold text-cobalt">
             Services we provide staff for
@@ -46,7 +55,7 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-2 grid-cols-1 gap-6 w-full">
-          <Link href="/cleaning/leeds-residential-cleaning">
+          <Link href="/residential-cleaning/leeds">
             <div className="flex xs:flex-row flex-col justify-center items-center bg-sun hover:bg-[#fab600]  rounded-md gap-8 xs:h-[150px] xxs:h-[250px] h-[280px] p-8 shadow-lg">
               <div className="flex-1 flex flex-col">
                 <h1 className="text-neutral-600 font-semibold text-[24px]">
@@ -65,7 +74,7 @@ export default function Home() {
               />
             </div>
           </Link>
-          <Link href="/cleaning/leeds-commercial-cleaning">
+          <Link href="/commercial-cleaning/leeds">
             <div className="flex xs:flex-row flex-col justify-center items-center bg-sun hover:bg-[#fab600]  rounded-md gap-8 xs:h-[150px] xxs:h-[250px] h-[280px] p-8 shadow-lg">
               <div className="flex-1 flex flex-col">
                 <h1 className="text-neutral-600 font-semibold text-[24px]">
