@@ -251,7 +251,7 @@ function page() {
         <div className="flex items-center justify-center w-full">
           <p className="text-center max-w-[1000px] text-neutral-500">
             At Brighter Team, we're proud to serve the beautiful city of Leeds
-            and its surrounding neighborhoods. Our dedicated cleaning team is
+            and its surrounding neighbourhoods. Our dedicated cleaning team is
             committed to delivering exceptional service throughout this vibrant
             community.
           </p>
