@@ -3,6 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+export const metadata = {
+  title: 'Thank You',
+}
+
 function page() {
   return (
     <div className="flex flex-col justify-center md:px-24 xxs:px-14 px-6 pb-24">
