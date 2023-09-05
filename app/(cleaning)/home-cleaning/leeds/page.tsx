@@ -2,7 +2,7 @@
 import { redirect } from 'next/navigation'
 import { useEffect } from 'react'
 
-function page() {
+function Page() {
   useEffect(() => {
     redirect('/residential-cleaning/leeds')
   }, [])
@@ -10,4 +10,4 @@ function page() {
   return null
 }
 
-export default page
+export default Page
