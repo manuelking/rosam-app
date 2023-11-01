@@ -29,8 +29,8 @@ function page() {
           />
         </div>
         <div className="absolute bg-white rounded-sm xs:p-16 p-6 py-10 shadow-lg lg:left-1/3 left-1/2 top-10 transform -translate-x-1/2 -translate-y-1/5 space-y-6 max-w-[700px]">
-          <h1 className="text-cobalt font-bold sd:text-[64px] xxs:text-[54px] text-[44px]">
-            Residential Cleaning Leeds
+          <h1 className="text-cobalt font-bold sd:text-[44px] xxs:text-[34px] text-[24px]">
+            Fully Insured Residential Cleaning
           </h1>
           <p className="font-light text-neutral-500">
             Choose Brighter Team Cleaning for all your cleaning needs. We offer

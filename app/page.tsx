@@ -10,7 +10,7 @@ export default function Home() {
       <div className="flex md:flex-row flex-col items-center justify-between w-full bg-sun">
         <div className="flex-1 space-y-6 md:py-0 py-10">
           <h1 className="xl:text-[54px] text-[34px] font-semibold text-cobalt px-16">
-            Elevate your space with Brighter Team
+            Fully Insured Cleaning Services
           </h1>
           <p className="sd:text-[16px] text-[14px] text-cobalt max-w-[800px] font-light px-16">
             Brighter Team is the premier staffing agency that bridges the gap
