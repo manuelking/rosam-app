@@ -26,7 +26,7 @@ function page() {
             style={{ objectPosition: 'center', objectFit: 'cover' }}
           />
         </div>
-        <div className="absolute bg-white rounded-sm xs:p-16 p-6 py-10 shadow-lg lg:left-1/3 left-1/2 top-10 transform -translate-x-1/2 -translate-y-1/5 space-y-6 max-w-[700px] sm:min-w-[700px] xs:min-w-[500px] sf:min-w-[350px] min-w-[200px]">
+        <div className="absolute bg-white rounded-sm xs:p-16 p-6 py-10 shadow-lg lg:left-1/3 left-1/2 top-10 transform -translate-x-1/2 -translate-y-1/5 space-y-6 max-w-[700px] sm:min-w-[700px] xs:min-w-[500px] xxs:min-w-[400px] xx:min-w-[330px] min-w-[280px]">
           <h1 className="text-cobalt font-bold sd:text-[54px] xxs:text-[34px] text-[34px]">
             Fully Insured Commercial Cleaning Leeds
           </h1>
