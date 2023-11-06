@@ -29,7 +29,7 @@ const footerLinks = [
     links: [
       {
         id: 'fc3-l1',
-        title: '0113 967 8344',
+        title: '0113 873 0647',
         link: '/',
       },
       {
