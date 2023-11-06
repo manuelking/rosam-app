@@ -81,8 +81,27 @@ export default function Home() {
                   Commercial Cleaning
                 </h1>
                 <p className="text-neutral-600">
-                  Our professional team of cleaners is committed to delivering a
-                  pristine environment that shines brighter.
+                  Our expert team of cleaners is committed to ensuring a
+                  pristine environment that shines with unmatched brilliance.
+                </p>
+              </div>
+              <Image
+                src="/rightchev.svg"
+                alt="chevron right"
+                width={40}
+                height={40}
+              />
+            </div>
+          </Link>
+          <Link href="/deep-cleaning/leeds">
+            <div className="flex xs:flex-row flex-col justify-center items-center bg-sun hover:bg-[#fab600]  rounded-md gap-8 xs:h-[150px] xxs:h-[250px] h-[280px] p-8 shadow-lg">
+              <div className="flex-1 flex flex-col">
+                <h1 className="text-neutral-600 font-semibold text-[24px]">
+                  Deep Cleaning
+                </h1>
+                <p className="text-neutral-600">
+                  Our skilled team of cleaners is devoted to ensuring a spotless
+                  space that radiates brilliance.
                 </p>
               </div>
               <Image
