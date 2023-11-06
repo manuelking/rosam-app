@@ -4,10 +4,9 @@ import Link from 'next/link'
 import React from 'react'
 
 export const metadata = {
-  title:
-    'Residential Cleaning Services in Leeds, West Yorksire | Brighter Team',
+  title: 'Deep Cleaning Services in Leeds, West Yorksire | Brighter Team',
   description:
-    'Transform your home into a pristine oasis with our trusted residential cleaning services in Leeds. Our professional cleaners deliver impeccable results, ensuring a clean and healthy living space in West Yorkshire. Schedule your cleaning today!',
+    'Transform your home into a pristine oasis with our trusted deep cleaning services in Leeds. Our professional cleaners deliver impeccable results, ensuring a clean and healthy living space in West Yorkshire. Schedule your cleaning today!',
 }
 
 function page() {
@@ -30,7 +29,7 @@ function page() {
         </div>
         <div className="absolute bg-white rounded-sm xs:p-16 p-6 py-10 shadow-lg lg:left-1/3 left-1/2 top-10 transform -translate-x-1/2 -translate-y-1/5 space-y-6 max-w-[700px] sm:min-w-[700px] xs:min-w-[500px] xxs:min-w-[400px] xx:min-w-[330px] min-w-[280px]">
           <h1 className="text-cobalt font-bold sd:text-[54px] xxs:text-[34px] text-[24px]">
-            Fully Insured Residential Cleaning In Leeds
+            Fully Insured Deep Cleaning In Leeds
           </h1>
           <p className="font-light text-neutral-500">
             Choose Brighter Team Cleaning for all your cleaning needs. We offer
@@ -55,7 +54,7 @@ function page() {
       {/* <div className="flex lg:flex-row flex-col justify-between gap-x-6 lg:gap-y-0 gap-y-8 lg:pt-0 pt-6 md:px-24 xxs:px-14 px-6 pb-24">
         <div className="flex-1 flex flex-col justify-center gap-y-6">
           <h1 className="text-cobalt font-bold sd:text-[64px] xxs:text-[54px] text-[44px]">
-            Residential Cleaning Leeds
+            Deep Cleaning Leeds
           </h1>
           <p className="font-light text-neutral-500">
             Choose Brighter Team Cleaning for all your cleaning needs. We offer
