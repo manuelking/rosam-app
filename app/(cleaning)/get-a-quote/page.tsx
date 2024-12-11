@@ -236,6 +236,10 @@ export default function Page() {
                 field="phoneNumber"
                 config={{
                   required: 'Please fill out this field.',
+                  pattern: {
+                    value: /^(?:\+44|0)7\d{9}$/,
+                    message: 'Enter a valid UK phone number',
+                  },
                 }}
                 error={errors.phoneNumber?.message}
               />
@@ -274,7 +278,9 @@ export default function Page() {
                 )}
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-black font-light">Service level</label>
+                <label className="text-black font-light">
+                  Service level<span className="text-red-500">*</span>
+                </label>
                 <select
                   {...register('serviceLevel', { required: true })}
                   name="serviceLevel"
@@ -327,7 +333,7 @@ export default function Page() {
               <CheckboxInput
                 label="Oven cleaning"
                 field="ovenCleaning"
-                config={{ required: false }}
+                // config={{ required: false }}
                 error={errors.ovenCleaning?.message}
               />
             </div>
@@ -338,7 +344,7 @@ export default function Page() {
               </label>
               <textarea
                 id="additionalNotes"
-                {...register('additionalInfo', { required: false })}
+                {...register('additionalInfo')}
                 placeholder="Enter any additional details or instructions"
                 className="border border-gray-300 rounded-sm p-2 text-black font-light focus:border-cobalt focus:outline-none"
                 rows={4}
