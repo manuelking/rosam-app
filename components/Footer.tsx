@@ -35,7 +35,7 @@ const footerLinks = [
       {
         id: 'fc3-l2',
         title: 'Enquire',
-        link: '/contact',
+        link: '/get-a-quote',
       },
     ],
   },
