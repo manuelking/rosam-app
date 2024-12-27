@@ -1,14 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { useForm, SubmitHandler, Path } from 'react-hook-form'
-import { addDoc, collection } from 'firebase/firestore'
+import { useForm, SubmitHandler, Path, UseFormRegister } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
-import { DB } from '@/utils/firebase'
 import Link from 'next/link'
-import { generateQuoteRequestEmailTemplate } from '@/utils/helpers'
 import DOMPurify from 'dompurify'
 
-type Inputs = {
+interface Inputs {
   fullName: string
   email: string
   phoneNumber: string
@@ -20,41 +17,37 @@ type Inputs = {
   kitchens: number
   ovenCleaning: boolean
   additionalInfo: string
-}
-
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string
-  field: Path<Inputs>
-  placeholder?: string
-  config?: any
-  error?: string
-}
-
-interface FormErrors {
-  consent: string | null
-  valid: string | null
+  dataConsentGiven: boolean
 }
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
   const [requestId, setRequestId] = useState<string | null>(null)
-  const [consentGiven, setConsentGiven] = useState(false)
   const [formError, setFormError] = useState<string | null>(null)
   const router = useRouter()
 
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors, isValid },
     clearErrors,
+    watch,
+    resetField,
   } = useForm<Inputs>({
-    mode: 'onBlur',
+    mode: 'onChange',
   })
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => handleFormSubmit(data)
+  const onSubmit: SubmitHandler<Inputs> = (data) => submitForm(data)
+
+  const cleaningType = watch('cleaningType')
+
+  useEffect(() => {
+    if (cleaningType) {
+      resetField('serviceLevel')
+    }
+  }, [cleaningType])
 
   useEffect(() => {
     localStorage.setItem('requestId', '')
@@ -68,54 +61,39 @@ export default function Page() {
     }
   }, [requestId])
 
-  const handleFormSubmit = async (formData: Inputs) => {
+  async function submitForm(formData: Inputs) {
     setIsLoading(true)
     if (isValid) {
       try {
         const sanitizedData = Object.fromEntries(
-          Object.entries(formData as Record<string, unknown>).map(
-            ([key, value]) => {
-              if (typeof value === 'string') {
-                return [key, value ? DOMPurify.sanitize(value) : '']
-              }
-              return [key, value ?? '']
+          Object.entries(formData).map(([key, value]) => {
+            if (typeof value !== 'boolean') {
+              return [key, value ? DOMPurify.sanitize(value) : '']
             }
-          )
+            return [key, value ?? '']
+          })
         )
-
-        const docRef = await addDoc(collection(DB, 'requests'), {
-          ...sanitizedData,
-          status: 'awaitingQuote',
-          submittedAt: new Date(),
-          isFromWebsite: true,
+        const response = await fetch('/api/quoteRequestsProxy', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(sanitizedData),
         })
 
-        if (docRef.id) {
-          const messageContent = generateQuoteRequestEmailTemplate(
-            docRef.id,
-            sanitizedData
-          )
-
-          addDoc(collection(DB, 'mail'), {
-            to: ['admin@brighterteam.co.uk'],
-            message: {
-              subject: 'Cleaning Quote Requested',
-              html: messageContent,
-            },
-          })
+        if (response.ok) {
+          setIsSubmitted(true)
+          setFormError(null)
+          clearErrors()
+          router.push('/thank-you')
+        } else {
+          setFormError('Failed to submit the request. Please try again later.')
+          setIsLoading(false)
         }
-
-        setIsSubmitted(true)
-        setFormError(null)
-        clearErrors()
-        // localStorage.setItem('requestId', docRef.id)
-        // setRequestId(docRef.id)
-        router.push('/thank-you')
-      } catch (err: any) {
+      } catch (error) {
         setFormError(
           'Unable to submit your request at this time. Try again later.'
         )
-        console.error('Error uploading form data:', err)
       } finally {
         setIsLoading(false)
       }
@@ -123,63 +101,6 @@ export default function Page() {
       setIsLoading(false)
       setFormError('Please complete all required fields.')
     }
-  }
-
-  function Input({
-    label,
-    field,
-    placeholder = `Enter your ${label.toLowerCase()}`,
-    config,
-    error,
-    ...rest
-  }: InputProps) {
-    return (
-      <div className="flex flex-col gap-1">
-        <label htmlFor={field} className="text-black font-light">
-          {label}
-          <span className="text-red-500">{config?.required && '*'}</span>
-        </label>
-        <input
-          id={field}
-          {...register(field, config)}
-          placeholder={placeholder}
-          className={`font-light border p-2 rounded-sm ${
-            error ? 'border-red-500' : 'border-gray-300'
-          } focus:border-cobalt focus:outline-none`}
-          {...rest}
-        />
-        {error && (
-          <span className="text-red-500 text-sm font-light">{error}</span>
-        )}
-      </div>
-    )
-  }
-
-  function CheckboxInput({
-    label,
-    field,
-    error,
-    config,
-  }: {
-    label: string
-    field: Path<Inputs>
-    error?: string
-    config?: object
-  }) {
-    return (
-      <div className="flex items-center gap-2">
-        <input
-          type="checkbox"
-          id={field}
-          {...register(field, config)}
-          className="h-5 w-5 text-cobalt border rounded"
-        />
-        <label htmlFor={field} className="text-black font-light">
-          {label}
-        </label>
-        {error && <span className="text-red-500 text-sm">{error}</span>}
-      </div>
-    )
   }
 
   return (
@@ -214,12 +135,14 @@ export default function Page() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
               <Input
+                register={register}
                 label="Full name"
                 field="fullName"
                 config={{ required: 'Please fill out this field.' }}
                 error={errors.fullName?.message}
               />
               <Input
+                register={register}
                 label="Email"
                 field="email"
                 config={{
@@ -232,6 +155,7 @@ export default function Page() {
                 error={errors.email?.message}
               />
               <Input
+                register={register}
                 label="Phone number"
                 field="phoneNumber"
                 config={{
@@ -244,6 +168,7 @@ export default function Page() {
                 error={errors.phoneNumber?.message}
               />
               <Input
+                register={register}
                 label="Postcode"
                 field="postcode"
                 placeholder="Enter the cleaning location postcode"
@@ -278,21 +203,39 @@ export default function Page() {
                 )}
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-black font-light">
+                <label
+                  className={`${
+                    !cleaningType ? 'text-gray-500' : 'text-black'
+                  } font-light`}
+                >
                   Service level<span className="text-red-500">*</span>
                 </label>
                 <select
                   {...register('serviceLevel', { required: true })}
                   name="serviceLevel"
+                  disabled={!cleaningType}
                   className="border border-slate-200 rounded-sm p-2 text-black font-light focus:border-cobalt focus:outline-none"
                 >
                   <option value="" disabled selected>
                     Select service level
                   </option>
-                  <option value="standard">Standard</option>
-                  <option value="seep">Deep</option>
-                  <option value="end of tenancy">End of tenancy</option>
+                  {cleaningType === 'residential' ? (
+                    <>
+                      <option value="end-of-tenancy">End of Tenancy</option>
+                      <option value="move-in">Move In</option>
+                    </>
+                  ) : (
+                    <>
+                      <option value="standard">Standard</option>
+                      <option value="deep">Deep</option>
+                    </>
+                  )}
                 </select>
+                {!cleaningType && (
+                  <span className="text-sm text-gray-500 font-light">
+                    Choose a cleaning type to see service level options.
+                  </span>
+                )}
                 {errors.serviceLevel && (
                   <span className="text-red-500 text-sm font-light">
                     Please select an option.
@@ -300,6 +243,7 @@ export default function Page() {
                 )}
               </div>
               <Input
+                register={register}
                 label="Number of rooms"
                 field="rooms"
                 type="number"
@@ -310,6 +254,7 @@ export default function Page() {
                 error={errors.rooms?.message}
               />
               <Input
+                register={register}
                 label="Number of bathrooms"
                 field="bathrooms"
                 type="number"
@@ -319,6 +264,7 @@ export default function Page() {
                 error={errors.bathrooms?.message}
               />
               <Input
+                register={register}
                 label="Number of kitchens"
                 field="kitchens"
                 type="number"
@@ -331,9 +277,10 @@ export default function Page() {
 
             <div className="pt-4">
               <CheckboxInput
+                register={register}
                 label="Oven cleaning"
                 field="ovenCleaning"
-                // config={{ required: false }}
+                defaultChecked={false}
                 error={errors.ovenCleaning?.message}
               />
             </div>
@@ -345,6 +292,7 @@ export default function Page() {
               <textarea
                 id="additionalNotes"
                 {...register('additionalInfo')}
+                defaultValue={''}
                 placeholder="Enter any additional details or instructions"
                 className="border border-gray-300 rounded-sm p-2 text-black font-light focus:border-cobalt focus:outline-none"
                 rows={4}
@@ -356,30 +304,29 @@ export default function Page() {
               )}
             </div>
 
-            {/* <div className="flex flex-col gap-1 pt-4">
+            <div className="flex flex-col gap-1 pt-4">
               <div className="flex items-start gap-2">
                 <input
-                  id="dataUsageConsent"
+                  id="dataConsentGiven"
                   type="checkbox"
-                  {...register('dataUsageConsent', {
+                  {...register('dataConsentGiven', {
                     required: 'You must agree to the terms to proceed',
                   })}
                   className="h-5 w-5 text-cobalt focus:ring-cobalt border-gray-300 rounded"
                 />
                 <p className="text-black text-sm font-light">
-                  I consent to providing my personal information for the purpose
-                  of receiving a cleaning service quote and related
-                  communications. I understand that my data will be used to
-                  contact me regarding the requested services and securely
-                  stored in compliance with applicable data protection laws.
+                  By checking this box, you consent to the collection and use of
+                  the personal data provided in this form for the purpose of
+                  receiving a cleaning quote and further communication regarding
+                  the cleaning service.
                 </p>
               </div>
-              {errors.dataUsageConsent && (
+              {errors.dataConsentGiven && (
                 <span className="text-red-500 text-sm font-light">
-                  {errors.dataUsageConsent.message}
+                  {errors.dataConsentGiven.message}
                 </span>
               )}
-            </div> */}
+            </div>
 
             {Object.keys(errors).length > 0 && (
               <div className="text-red-500 text-sm font-light my-8">
@@ -409,5 +356,62 @@ export default function Page() {
         </div>
       </div>
     </main>
+  )
+}
+
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  register: UseFormRegister<Inputs>
+  label: string
+  field: Path<Inputs>
+  placeholder?: string
+  config?: any
+  error?: string
+}
+
+function Input({
+  register,
+  label,
+  field,
+  placeholder = `Enter your ${label.toLowerCase()}`,
+  config,
+  error,
+  ...rest
+}: InputProps) {
+  return (
+    <div className="flex flex-col gap-1">
+      <label htmlFor={field} className="text-black font-light">
+        {label}
+        <span className="text-red-500">{config?.required && '*'}</span>
+      </label>
+      <input
+        id={field}
+        {...register(field, config)}
+        placeholder={placeholder}
+        className={`font-light border p-2 rounded-sm ${
+          error ? 'border-red-500' : 'border-gray-300'
+        } focus:border-cobalt focus:outline-none`}
+        {...rest}
+      />
+      {error && (
+        <span className="text-red-500 text-sm font-light">{error}</span>
+      )}
+    </div>
+  )
+}
+
+function CheckboxInput({ register, label, field, error, config }: InputProps) {
+  return (
+    <div className="flex items-center gap-2">
+      <input
+        type="checkbox"
+        id={field}
+        {...register(field, config)}
+        className="h-5 w-5 text-cobalt border rounded"
+      />
+      <label htmlFor={field} className="text-black font-light">
+        {label}
+      </label>
+      {error && <span className="text-red-500 text-sm">{error}</span>}
+    </div>
   )
 }
